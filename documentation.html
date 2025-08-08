@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="as">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OpenSetu নথিপত্ৰ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+    }
+
+    .about-wrapper {
+      background-color: #F7F9FB;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .white-tilted-layer {
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      height: 1300px;
+      background: white;
+      transform: skewY(-5deg);
+      z-index: 0;
+    }
+
+    .blue-shapes {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      z-index: 1;
+      transform: skewY(-5deg);
+    }
+
+    .blue1, .blue2 {
+      height: 25px;
+      transform: skewX(-30deg);
+      position: absolute;
+    }
+
+    .blue1 {
+      background-color: #80E9FF;
+      top: 50px;
+      right: 10px;
+      z-index: 1;
+      width: 420px;
+    }
+
+    .blue2 {
+      background-color: #185ADB;
+      top: 70px;
+      right: 220px;
+      z-index: 2;
+      width: 120px;
+    }
+
+    .section {
+      position: relative;
+      max-width: 900px;
+      padding: 120px 24px 80px;
+      margin: auto;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #032E83;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: #032E83;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #425466;
+      margin-bottom: 16px;
+    }
+
+    a {
+      color: #185ADB;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 24px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: #425466;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="about-wrapper">
+    <div class="white-tilted-layer"></div>
+    <div class="blue-shapes">
+      <div class="blue1"></div>
+      <div class="blue2"></div>
+    </div>
+
+    <section class="section">
+      <h1>নথিপত্ৰ</h1>
+
+      <h2>OpenSetu: কেনেকৈ কাম কৰে</h2>
+      <p>
+        OpenSetu HTTPS (DoH) ৰ ওপৰত DNS দ্বাৰা চালিত , এটা নে'টৱৰ্ক প্ৰটোকল যি HTTPS ৰ ওপৰত ডমেইন নামসমূহ সুৰক্ষিতভাৱে সমাধান কৰে। DoH এ মধ্যস্থতাকাৰীসকলক DNS প্ৰশ্নসমূহৰ ওপৰত চোৰাংচোৱাগিৰি বা খেলা-ধূলা কৰাত বাধা দি গোপনীয়তা আৰু সুৰক্ষা বৃদ্ধি কৰে।
+      </p>
+
+      <h2>ভাৰত কা ইণ্টাৰনেট</h2>
+      <p>
+        ভাৰত কা ইণ্টাৰনেট হেণ্ডশ্বেকৰ ওপৰত নিৰ্মিত, যিটো এটা মুক্ত উৎস, বিকেন্দ্ৰীকৃত নামকৰণ প্ৰট'কল যিয়ে ইণ্টাৰনেটৰ বাবে বিকল্প মূল অঞ্চল হিচাপে কাম কৰে। ই আমাৰ ইণ্টাৰনেটৰ মেৰুদণ্ড চেন্সৰশ্বিপ-প্ৰতিৰোধী, টেম্পাৰ-প্ৰুফ ডমেইন ৰিজ’লিউচন সক্ষম কৰে।
+      </p>
+      <p>
+        অদূৰ ভৱিষ্যতে , আমি এটা অধিক মুক্ত আৰু আন্তঃকাৰ্য্যকৰী ৱেব সামৰ্থবান কৰিবলৈ ENS (Ethereum Name Service) আৰু IPFS (Inter-Planetary File System) ৰ দৰে প্ৰটোকলসমূহ সমৰ্থন কৰাৰ পৰিকল্পনাও কৰিছো।
+      </p>
+
+      <h2>নিজৰ DoH নিৰ্মাণ কৰক</h2>
+      <p>
+        যিকোনো ব্যক্তিয়ে ভাৰতীয় ইণ্টাৰনেটত প্ৰৱেশ আৰু সম্প্ৰসাৰণৰ বাবে DoH resolver নিৰ্মাণ কৰিব পাৰে। স্কুল হওক, বিশ্ববিদ্যালয় হওক, ষ্টাৰ্টআপ হওক, অলাভজনক হওক, বা চৰকাৰী সংস্থা হওক। <br>
+        <strong>OpenSetu</strong> মাত্ৰ এটা উদাহৰণ; <em>আপুনি নিজৰ চলাব পাৰে।</em>
+      </p>
+
+      <h2>আমাৰ ষ্টেক অন্বেষণ কৰক</h2>
+      <ul>
+        <li>🧰 <strong>ডকাৰ DoH চাৰ্ভাৰ:</strong> <a href="https://github.com/satishweb/docker-doh" target="_blank">https://github.com/satishweb/ডকাৰ-ডোহ</a></li>
+        <li>🌐 <strong>হেণ্ডশ্বেক (HNS) ডক্স:</strong> <a href="https://hsd-dev.org/" target="_blank">https://hsd-dev.org/</a></li>
+        <li>🦊 <strong>ইথিৰিয়াম নাম সেৱা (ENS):</strong> <a href="https://ens.domains/" target="_blank">https://এন.ডমেইন/</a></li>
+        <li>📦 <strong>IPFS: আন্তঃগ্ৰহ ফাইল ব্যৱস্থা:</strong> <a href="https://ipfs.tech/" target="_blank">https://ipfs.tech/</a></li>
+      </ul>
+    </section>
+  </section>
+
+</body>
+</html>
