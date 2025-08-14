@@ -1,9 +1,128 @@
 <!DOCTYPE html>
-<html lang="as">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OpenSetu - আমাৰ বিষয়ে</title>
+  <title>OpenSetu About Section</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    /* Menu bar styling */
+    .top-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 12px 40px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .top-menu a {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .top-menu a:hover {
+      color: #007BFF;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Side menu */
+    .side-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #f8f9fa;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 2000;
+    }
+    .side-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+    .side-menu a:hover {
+      color: #007BFF;
+    }
+    .side-menu .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2em;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Responsive rules */
+    @media (max-width: 768px) {
+      .top-menu a {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  </style>
+</head>
+<body class="page">
+
+  <!-- Top Menu -->
+  <nav class="top-menu">
+    <a href="index.html">মূখ্যপৃষ্ঠা</a>
+    <a href="about.html">আমাৰ বিষয়ে</a>
+    <a href="beta.html">আইনী তথ্য</a>
+    <a href="documentation.html">ডকুমেণ্টেচন</a>
+    <a href="domain.html">ড’মেইন তালিকা</a>
+    <button class="menu-toggle" onclick="openMenu()"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- Side Menu -->
+  <div id="sideMenu" class="side-menu">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+    <a href="index.html">মূখ্যপৃষ্ঠা</a>
+    <a href="about.html">আমাৰ বিষয়ে</a>
+    <a href="beta.html">আইনী তথ্য</a>
+    <a href="documentation.html">ডকুমেণ্টেচন</a>
+    <a href="domain.html">ড’মেইন তালিকা</a>
+  </div>
+
+  <script>
+function openMenu() {
+  document.getElementById("sideMenu").style.width = "250px"; // Adjust width as needed
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu").style.width = "0";
+}
+</script>
+
+
+
+
   <style>
     :root {
       --max-width: 1200px;
@@ -113,6 +232,7 @@
       border-radius: 15px;
       justify-items: center;
     }
+    
     .grid-box {
       background: #F5F7FA;
       padding: 1.5rem;
@@ -137,6 +257,8 @@
       line-height: 1.6;
       margin: 0;
     }
+
+    /* Breakpoints */
     @media (max-width: 768px) {
       .section { padding: 6rem var(--gutter) 3rem; }
       .about-heading {
@@ -162,36 +284,38 @@
       <div class="blue2"></div>
     </div>
 
-    <div class="section">
-      <div class="top-container">
-        <div class="top-text">
-          <h1 class="about-heading">আমাৰ বিষয়ে</h1>
-          <p class="highlight">এটাকৈ এটা পৰিচয়</p>
-          <h2>OpenSetu হৈছে ভাৰতৰ নিজা<br>ইণ্টাৰনেটৰ সেতু</h2>
-          <p>আমি প্ৰতিজন ভাৰতীয়ক নিজৰ মাতৃভাষাত ৱেবত প্ৰৱেশ কৰিবলৈ সক্ষম কৰোঁ, কোনো ইংৰাজী, কোনো নতুন এপ, কোনো গেটকিপাৰ।</p>
-          <p>এটা বিনামূলীয়া, বিকেন্দ্ৰীকৃত, আৰু অন্তৰ্ভুক্ত ইণ্টাৰনেটৰ দৃষ্টিভংগীৰ পৰা জন্মগ্ৰহণ কৰা, OpenSetu এ ব্যৱহাৰকাৰীসকলক তেওঁলোকৰ DNS ছেটিংছ সলনি কৰি Handshake দ্বাৰা চালিত আৰু ভাৰতত ৰুট কৰা এটা বহুভাষিক ৱেব আনলক কৰিবলৈ দিয়ে। ই আপোনাৰ চৰ্তত ইণ্টাৰনেট, য'ত ডমেইন নাম বিদেশী লিপি বা কেন্দ্ৰীভূত নিয়ন্ত্ৰণত নহয় , বৰঞ্চ আপোনাৰ নিজৰ ভাষাত, আপোনাৰ মালিকানাধীন।</p>
-          <p>আমি একচেটিয়া অধিকাৰৰ পৰা ইণ্টাৰনেট পুনৰ উদ্ধাৰ কৰি মানুহক এটাকৈ এটা নাম, এটা ভাষা, এটা পৰিচয় ঘূৰাই দিছো।</p>
-        </div>
-        <div class="top-image">
-          <img src="img5.png" alt="About Image">
-        </div>
-      </div>
+<div class="section">
+  <div class="top-container">
+    <div class="top-text">
+      <h1 class="about-heading">আমাৰ বিষয়ে</h1>
 
-      <div class="grid">
-        <div class="grid-box">
-          <h3>বিল্ডাৰসকলৰ বাবে</h3>
-          <p>OpenSetu হৈছে উদ্ভাৱনৰ খেলপথাৰ। স্থানীয় ভাষাৰ এপ নিৰ্মাণ কৰা ডেভেলপাৰৰ পৰা আৰম্ভ কৰি ডিজিটেল পৰিচয় পুনৰ কল্পনা কৰা ষ্টাৰ্টআপলৈকে, ভাৰতৰ এতিয়া গঢ় দিবলৈ সাজু বিকেন্দ্ৰীকৃত ভেটি আছে। স্থানীয় ডমেইন নাম, বহুভাষিক প্ৰৱেশ, আৰু এটা মুক্ত DNS ৰ সৈতে, আপুনি সেৱাসমূহ নিৰ্মাণ কৰিব পাৰে যি 1.4 বিলিয়ন কণ্ঠৰ সৈতে পোনপটীয়াকৈ কথা কয়, নিজৰ ভাষাত।</p>
-        </div>
-        <div class="grid-box">
-          <h3>বিনিয়োগকাৰীৰ বাবে</h3>
-          <p>মুক্ত ইণ্টাৰনেটত মানৱতাৰ আটাইতকৈ ডাঙৰ অংশ ভাৰত। OpenSetu কেৱল আন্তঃগাঁথনি নহয়, ই আন্তঃশক্তি। আমি ভাষাৰ বাধা আঁতৰাই ব্যক্তিগত মালিকীস্বত্ব ঘূৰাই দি পৰৱৰ্তী কোটি কোটি ব্যৱহাৰকাৰীক আনলক কৰিছো। ইক’চিষ্টেমে অ’ এছ আৰু ব্ৰাউজাৰৰ দৰে ইনফ্ৰা টেকৰ পৰা আৰম্ভ কৰি ডিজিটেল পৰিচয়, পেমেণ্ট, কমাৰ্চ, আৰু যোগাযোগৰ দৰে সেৱালৈকে সকলোকে পুনৰ গঠন কৰিব, এই সকলোবোৰ ভাৰতৰ আটাইতকৈ মৌলিক স্তৰত উঠিব: নিজৰ ইণ্টাৰনেট। ইয়াৰ ওপৰত নিৰ্মাণ কৰা ৰেল আৰু প্ৰতিষ্ঠাপকসকলে বিনিয়োগ কৰক আৰু আপুনি ডিজিটেল ভাৰতৰ ভৱিষ্যতত বিনিয়োগ কৰক।</p>
-        </div>
-        <div class="grid-box">
-          <h3>চৰকাৰসমূহৰ বাবে</h3>
-          <p>ডিজিটেল ৰাজহুৱা সামগ্ৰী ডিজিটেল ৰাজহুৱা আন্তঃগাঁথনিৰ যোগ্য। OpenSetu ইয়াৰ মূলত স্বচ্ছতা, অন্তৰ্ভুক্তি, আৰু সাৰ্বভৌমত্বৰ সৈতে নিৰ্মাণ কৰা হৈছে। আমি ইণ্ডিয়া ষ্টেকৰ দৃষ্টিভংগীৰ সৈতে মিল খাইছো আৰু প্ৰতিজন নাগৰিকক নিজৰ মাতৃভাষাত ডিজিটেল সেৱাসমূহ লাভ কৰিবলৈ সৱলীকৰণ কৰোঁ। গ্ৰাম্য অভিগমৰ পৰা ৰাষ্ট্ৰীয় পৰ্যায়লৈকে, OpenSetu এ চৰকাৰসমূহক সম্পূৰ্ণ-ষ্টেক ডিজিটেল অন্তৰ্ভুক্তিৰ বাবে এটা নিৰাপদ, সাৰ্বভৌম পথ প্ৰদান কৰে। ভাৰতে বিশ্বব্যাপী ইণ্টাৰনেটক ধৰি ৰখাৰ প্ৰয়োজন নাই । OpenSetu ৰ সহায়ত আমি নিজৰ ভাষাত , নিজৰ চৰ্তত আগবাঢ়ি যাওঁ</p>
-        </div>
-      </div>
+      <h2>ওপেনসেতু হৈছে
+        <br>ভাৰতৰ নিজস্ব ইণ্টাৰনেটলৈ সেতু।</h2>
+      <p>আমিয়ে প্ৰতিটো ভাৰতীয়ক তেওঁলোকৰ মাতৃভাষাত ৱেব ব্যৱহাৰৰ সুবিধা দিয়ে — ইংৰাজী নাই, নতুন এপছ নাই, কোনো গেটকীপাৰ নাই।</p>
+      <p>স্বাধীন, বিকেন্দ্রীকৃত আৰু অন্তৰ্ভুক্তিমূলক ইণ্টাৰনেটৰ দৃশ্যপটৰ পৰা জন্ম লৈ, ওপেনসেতু ব্যৱহাৰকাৰীক কেৱল DNS ছেটিংছ সলনি কৰি Handshake দ্বাৰা চালিত আৰু ভাৰতত মূলভূমি থকা বহু-ভাষিক ৱেব আনলক কৰাৰ সুযোগ দিয়ে। ই হৈছে আপোনাৰ শর্তত ইণ্টাৰনেট — য’ত ড’মেইন নাম বিদেশী লিপিত বা কেন্দ্রীয় নিয়ন্ত্ৰণত নহয়, আপোনাৰ নিজ ভাষাত, আপোনাৰ নিজস্ব অধিকাৰত।</p>
+      <p>আমি ইণ্টাৰনেট একচেটিয়া সংস্থাসমূহৰ পৰা উদ্ধাৰ কৰি জনসাধাৰণলৈ উভতাই দিছোঁ — এটা নাম, এটা ভাষা, এটা পৰিচয় একে সময়ত।</p>
     </div>
-  </section>
+    <div class="top-image">
+      <img src="img5.png" alt="আমাৰ বিষয়ে ছবি">
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="grid-box">
+      <h3>নির্মাতাসকলৰ বাবে</h3>
+      <p>ওপেনসেতু হৈছে উদ্ভাৱনৰ এজনী খেলপথাৰ। আঞ্চলিক ভাষাৰ এপছ নিৰ্মাণ কৰা ডেভেলপাৰৰ পৰা আৰম্ভ কৰি ডিজিটেল পৰিচয় পুনৰ কল্পনা কৰা ষ্টাৰ্টআপলৈ — ভাৰতৰ এতিয়া এটা বিকেন্দ্রীকৃত ভিত্তি আছে যি গঢ়ি তোলা সাজু। স্বভাষাৰ ড’মেইন নাম, বহু-ভাষিক লগইন আৰু মুক্ত DNS সহ, আপুনি এনে সেৱা গঢ়িব পাৰে যি ১.৪ বিলিয়ন কণ্ঠৰ সৈতে সোজাকৈ কথা পাতিব, তেওঁলোকৰ নিজ ভাষাত।</p>
+    </div>
+    <div class="grid-box">
+      <h3>বিনিয়োগকাৰীৰ বাবে</h3>
+      <p>ভাৰত হৈছে মুক্ত ইণ্টাৰনেটৰ আটাইতকৈ ডাঙৰ জনসংখ্যাৰ অংশ। ওপেনসেতু কেৱল ইন্ফ্ৰাস্ট্ৰাকচাৰ নহয়, ই হৈছে ইন্ফ্ৰা-পাৱাৰ। আমি ভাষাৰ বাধা আঁতৰাই আৰু ডিজিটেল অধিকাৰ ব্যক্তিক উভতাই দিয়ে পৰৱৰ্তী এক বিলিয়ন ব্যৱহাৰকাৰী আনলক কৰিছোঁ। ইক’চিষ্টেমে Infra tech (যেনে OS আৰু ব্ৰাউজাৰ)ৰ পৰা আৰম্ভ কৰি ডিজিটেল পৰিচয়, পেমেণ্ট, বাণিজ্য আৰু যোগাযোগৰ দৰে সেৱালৈকে সকলোকে নতুন ৰূপ দিব — সকলো ভাৰতৰ আটাইতকৈ ভিত্তিমূল স্তৰ, নিজৰ ইণ্টাৰনেটৰ ওপৰত নিৰ্ভৰ কৰি। ইয়াৰ ওপৰত নিৰ্মাণ কৰা ৰেল আৰু প্ৰতিষ্ঠাতাত বিনিয়োগ কৰক, আপুনি ডিজিটেল ভাৰতৰ ভবিষ্যতত বিনিয়োগ কৰিছে।</p>
+    </div>
+    <div class="grid-box">
+      <h3>চৰকাৰসমূহৰ বাবে</h3>
+      <p>ডিজিটেল ৰাজহুৱা সম্পদৰ বাবে ডিজিটেল ৰাজহুৱা ইন্ফ্ৰাস্ট্ৰাকচাৰ প্ৰয়োজন। ওপেনসেতু স্বচ্ছতা, অন্তৰ্ভুক্তি আৰু স্বায়ত্তশাসনক মূলে ৰাখি নিৰ্মাণ কৰা হৈছে। আমি ইণ্ডিয়া ষ্টেকৰ দৃশ্যৰ সৈতে সঙ্গতিপূর্ণ আৰু প্ৰতিটো নাগৰিকক নিজৰ মাতৃভাষাত ডিজিটেল সেৱা অভিগম কৰিবলৈ ক্ষমতায়িত কৰোঁ। গাঁওৰ পৰা ৰাষ্ট্ৰীয় পৰ্যন্ত, ওপেনসেতু চৰকাৰক এটা সুৰক্ষিত, স্বয়ংসম্পূর্ণ পথ প্ৰদান কৰে পূৰ্ণ-স্তৰৰ ডিজিটেল অন্তৰ্ভুক্তিৰ বাবে।
+      ভাৰতক বিশ্ব ইণ্টাৰনেটক ধৰি পেলাব লাগিব নালাগে। ওপেনসেতুৰ সৈতে, আমি আমাৰ নিজ ভাষাত, আমাৰ নিজ শর্তত আগুৱাই যাম।</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
