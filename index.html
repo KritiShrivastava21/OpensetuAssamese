@@ -1,152 +1,330 @@
 <!-- index.html -->
 <!DOCTYPE html>
-<html lang="as">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OpenSetu Hero</title>
+  <title>OpenSetu</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    /* Menu bar styling */
+    .top-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 12px 40px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .top-menu a {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .top-menu a:hover {
+      color: #007BFF;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Side menu */
+    .side-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #f8f9fa;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 2000;
+    }
+    .side-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+    .side-menu a:hover {
+      color: #007BFF;
+    }
+    .side-menu .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2em;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Responsive rules */
+    @media (max-width: 768px) {
+      .top-menu a {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  </style>
 </head>
 <body class="page">
 
+  <nav class="top-menu">
+    <a href="index.html">মূখ্যপৃষ্ঠা</a>
+    <a href="about.html">আমাৰ বিষয়ে</a>
+    <a href="beta.html">আইনী তথ্য</a>
+    <a href="documentation.html">ডকুমেণ্টেচন</a>
+    <a href="domain.html">ড’মেইন তালিকা</a>
+    <button class="menu-toggle" onclick="openMenu()"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- Side Menu -->
+  <div id="sideMenu" class="side-menu">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+    <a href="index.html">মূখ্যপৃষ্ঠা</a>
+    <a href="about.html">আমাৰ বিষয়ে</a>
+    <a href="beta.html">আইনী তথ্য</a>
+    <a href="documentation.html">ডকুমেণ্টেচন</a>
+    <a href="domain.html">ড’মেইন তালিকা</a>
+  </div>
+  
   <div class="tilted-bg"></div>
 
-  <section class="hero">
+ <section class="hero">
     <div class="hero-text">
-      <h1 class="hero-title">১.৪ বিলিয়ন কণ্ঠ,<br>
-        ২২টা ভাষা,<br>
-        এটা ইণ্টাৰনেট<br>
-        &amp; আপুনি
+      <h1 class="hero-title">১৫০ কোটি আওয়াজ<br>
+        ২৩ ভাষা,<br>
+        একত্ৰে এটা ইন্টাৰনেটত।
       </h1>
       <p class="hero-lead">
-        OpenSetu এ আপোনাক আপোনাৰ মাতৃভাষাত ইণ্টাৰনেটত প্ৰৱেশ কৰিবলৈ দিয়ে। কোনো এপৰ প্ৰয়োজন নাই।<br>
-        মাত্ৰ আপোনাৰ ব্ৰাউজাৰৰ ছেটিংছ সলনি কৰক আৰু বুম কৰক, ৱেবে আপোনাৰ ভাষা কয়।<br><br>
-        ই আন্তঃগাঁথনি যিয়ে আপোনাক ৱেবৰ ভাষা-নিৰ্দিষ্ট সংস্কৰণসমূহৰ সৈতে সংযোগ কৰে।
-        ব্যৱহাৰ কৰা আৰম্ভ কৰক: pranam.opensetu.in
-      </p>
-      <button class="btn-primary">কেনেকৈ কাম কৰে চাওক →</button>
-    </div>
+  ওপেনসেতু-এ আপোনাক আপোনাৰ মাতৃভাষাত ইণ্টাৰনেট ব্যৱহাৰ কৰাৰ সুযোগ দিয়ে। কোনো এপ্লিকেচন প্রয়োজন নহয়।
+  কেৱল আপোনাৰ ব্ৰাউজাৰ ছেটিংছ সলনি কৰক, আৰু ৱেবে আপোনাৰ ভাষাত কথা পাতিব।
+  <br><br>ই এটা ইন্ফ্ৰাস্ট্ৰাকচাৰ যি আপোনাক ভাষা-নির্দিষ্ট ৱেব সংস্কৰণৰ সৈতে সংযোগ কৰে।
+  <br><br>ওপেনসেতু ব্যৱহাৰ আৰম্ভ কৰক:
+</p>
+<div class="link-box">
+  <span id="opensetu-link">https://pranam.opensetu.in</span>
+  <button id="copy-btn" title="Copy link">
+    <i class="fa-solid fa-copy"></i>
+  </button>
+</div>
+
+<script>
+  document.getElementById("copy-btn").addEventListener("click", function() {
+    const text = document.getElementById("opensetu-link").innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Link copied!");
+    });
+  });
+</script>
+
+
+     <button class="btn-primary" onclick="scrollToVideo()">Watch how it works →</button>
+</div>
+
     <div class="hero-image">
       <img src="img1.png" alt="Descriptive text" />
     </div>
   </section>
 
-  <section class="info-section"> 
-    <div class="info-wrapper">
-      <div class="text-block">
-        <h2 class="section-title">OpenSetu এ কি কৰে?</h2>
-        <p>OpenSetu এটা DNS ৰিজ'লভাৰ যি আপোনাক আপোনাৰ মাতৃভাষাত ৰাজহুৱা সামগ্ৰী আৰু চৰকাৰী সঁজুলিসমূহ অভিগম কৰাৰ অনুমতি দিয়ে। মাত্ৰ আপোনাৰ ডমেইনৰ নাম আপোনাৰ নিজৰ ভাষাত লিখক আৰু ই ইয়াক অফিচিয়েল চাইটৰ ভাষা সংস্কৰণলৈ পুনৰনিৰ্দেশিত কৰিব।</p>
-        <p>উদাহৰণস্বৰূপে, যদি আপুনি হিন্দীভাষী হয়, তেন্তে আপুনি কেৱল <span class="highlight">पीएमकिसान.सर.भा</span> লিখি pmkisan.gov.in চাব পাৰে, বা যদি আপুনি তামিল ব্যৱহাৰ কৰে তেন্তে মাত্ৰ <span class="highlight">பிஎம்கிசான்.ப</span> লিখক।</p>
-        <p class="small">অস্বীকাৰ: OpenSetu, এতিয়াৰ দৰে, কেৱল URL ৰ যোগেদি ভাষা সংস্কৰণ সমৰ্থন কৰা ৱেবছাইটসমূহলে পুনৰনিৰ্দেশিত কৰে। যদি কোনো ৱেবছাইটে ভাষা সলনি পৰিচালনা কৰিবলৈ জাভাস্ক্ৰিপ্ট বা কুকীজ ব্যৱহাৰ কৰে, ব্যৱহাৰকাৰীসকলে চাইটটোৰ ভাষা নিৰ্বাচক ব্যৱহাৰ কৰি ভাষাটো নিজেই সলনি কৰিব লাগিব।</p>
-      </div>
-      <div class="image-block">
-        <img src="img2.png" alt="OpenSetu Example" class="info-image">
-      </div>
-    </div>
-  </section>
+  <script>
+    // Copy button
+    document.getElementById("copy-btn").addEventListener("click", function () {
+      const linkText = document.getElementById("opensetu-link").textContent;
+      navigator.clipboard.writeText(linkText).then(() => {
+        alert("Link copied to clipboard!");
+      }).catch(err => {
+        console.error("Failed to copy: ", err);
+      });
+    });
 
-  <section class="info-section">
-    <div class="info-wrapper">
-      <div class="text-block">
-        <h2 class="section-title">অনুবাদক নহয়,<br>OpenSetu নতুন ইণ্টাৰনেটৰ দলং</h2>
-        <p>ইয়াত কোনো ইংৰাজী বাউন্সাৰ নাই। এইটো ভাৰতৰ নিজা ইণ্টাৰনেট, য'ত:-</p>
-        <ul class="feature-list">
-          <li>আপোনাৰ ভাষা অবিকল্পিত, ব্যতিক্ৰম নহয়।</li>
-          <li>পুৰণি ইণ্টাৰনেটে আগৰ দৰেই কাম কৰে।</li>
-          <li>এতিয়া আপোনাৰ স্থানীয় লিপিত ৱেবছাইটসমূহত প্ৰৱেশ কৰক।</li>
-          <li>প্ৰতিজন নাগৰিকে ডিজিটেল ৰাজহুৱা সামগ্ৰীৰ সুবিধা লাভ কৰে।</li>
-        </ul>
-      </div>
-      <div class="image-block">
-        <img src="img3.png" alt="Bridge to New Internet" class="info-image">
-      </div>
-    </div>
-  </section>
+    // Side menu functions
+    function openMenu() {
+      document.getElementById("sideMenu").style.width = "250px";
+    }
+    function closeMenu() {
+      document.getElementById("sideMenu").style.width = "0";
+    }
+  </script>
 
-  <section class="info-section">
-    <div class="info-wrapper">
-      <div class="text-block">
-        <h2 class="section-title">কেনেকৈ আৰম্ভ কৰিব</h2>
-        <p>এটা পৰিৱৰ্তন। এটা সম্পূৰ্ণ নতুন ইণ্টাৰনেট।</p>
-      </div>
-      <div class="image-block">
-        <img src="img4.png" alt="Ready Image" class="info-image">
-      </div>
-    </div>
-  </section>
+<section class="info-section"> 
+  <div class="info-wrapper">
+    <div class="text-block">
+      <h2 class="section-title">ওপেনসেতু-এ<br>কি কৰে?</h2>
+      <p>ওপেনসেতু এটা DNS ৰিজলভাৰ যি আপোনাক আপোনাৰ মাতৃভাষাত চৰকাৰী সেৱা আৰু ৰাজহুৱা সুবিধাসমূহ অভিগম কৰিবলৈ সহায় কৰে। কেৱল আপোনাৰ ড’মেইনৰ নাম আপোনাৰ নিজ ভাষাত টাইপ কৰক, আৰু ই আপোনাক সেই ভাষাৰ অফিচিয়েল ছাইটৰ সংস্কৰণলৈ ৰিডাইৰেক্ট কৰিব।</p>
+      <p>
+  <strong>উদাহৰণস্বৰূপে,</strong> যদি আপুনি হিন্দী ভাষাভাষী, আপুনি pmkisan.gov.in ভিজিট কৰিব পাৰে কেৱল 
+  <span class="highlight">पीएमकिसान.गव.भ</span> 
+  দেবনাগৰীত টাইপ কৰি। <br>
+  আপুনি সমৰ্থিত সকলো ড’মেইনৰ পূৰ্ণ তালিকা চাব পাৰে 
+  <a href="domain.html">ড’মেইন তালিকা</a>-ত।
+</p>
 
-  <section class="last info-section">
-    <div class="container center-content">
-      <h2 class="section-title">এইটো হৈছে মাত্ৰ আৰম্ভণি</h2>
-      <p>Public Utilities, Digital Citizenship, Local Identity, Build on It, Digital Swadeshi, Web3 Integrations</p>
-      <div class="video-wrapper">
-        <video src="your-video.mp4" controls></video>
-      </div>
+      <p class="small"><strong>অস্বীকৃতি:</strong> 
+        বৰ্তমানৰ পৰ্যন্ত, ওপেনসেতু কেৱল সেই ছাইটলৈকে ৰিডাইৰেক্ট কৰে যি URLৰ মাধ্যমে ভাষাৰ সংস্কৰণ সমৰ্থন কৰে। যদি কোনো ছাইটে ভাষা সলনি JavaScript বা কুকিজৰ মাধ্যমে নিয়ন্ত্ৰণ কৰে, তেন্তে ব্যৱহাৰকাৰীয়ে নিজে ছাইটৰ ভাষা ছেলেক্টৰ ব্যৱহাৰ কৰি ভাষা সলনি কৰিব লাগিব।</p>
+ </div>
+    <div class="image-block">
+      <img src="img2.png" alt="OpenSetu উদাহৰণ" class="info-image">
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="cta-section">
-    <div class="cta-gradient-layer"></div>
-    <div class="cta-inner">
-      <h2>আজিৰে পৰা আৰম্ভ কৰক</h2>
-      <div class="cta-grid">
-        <div>
-          <p class="cta-desc">আধাৰ, ডিজিলকাৰ, ইউপিআই, গুগল,<br>X, BTC</p>
-          <h3>ৰাজহুৱা উপযোগীতা</h3>
-        </div>
-        <div>
-          <p class="cta-desc">আপোনাৰ মাতৃভাষাত শিপাই থকা পৰীক্ষাযোগ্য ডিজিটেল পৰিচয়।</p>
-          <h3>ডিজিটেল নাগৰিকত্ব</h3>
-        </div>
-        <div>
-          <p class="cta-desc">আপোনাৰ মাতৃভাষাত ডমেইন নাম আৰু ব্যক্তিগতকৃত ইমেইল আইডি।</p>
-          <h3>স্থানীয় পৰিচয়</h3>
-        </div>
-        <div>
-          <p class="cta-desc">ভাৰত কা ইণ্টাৰনেটত নিজাকৈ DOH ৰিজ'লভাৰ বা সেৱা সৃষ্টি কৰক</p>
-          <h3>ইয়াৰ ওপৰত নিৰ্মাণ কৰক</h3>
-        </div>
-        <div>
-          <p class="cta-desc">ভাৰতৰ বাবে নিৰ্মিত এপ, প্লেটফৰ্ম, আৰু সেৱাসমূহ।</p>
-          <h3>ডিজিটেল স্বাধীন</h3>
-        </div>
-        <div>
-          <p class="cta-desc">আৰু IPFS ৰ দৰে গোলকীয় Web3 আন্তঃগাঁথনিৰ সৈতে সংহতি কৰক ।</p>
-          <h3>Web3 সংহতিসমূহ</h3>
-        </div>
-      </div>
+<section class="info-section">
+  <div class="info-wrapper">
+    <div class="text-block">
+      <h2 class="section-title">এটা অনুবাদক নহয়,
+        <br>ওপেনসেতু হৈছে এটা সেতু
+        <br>নতুন ইণ্টাৰনেটলৈ।</h2>
+      <p>ইয়াত কোনো English বাউন্সাৰ নাই। ই ভাৰতৰ নিজস্ব ইণ্টাৰনেট:</p>
+      <ul class="feature-list">
+        <li>আপোনাৰ ভাষা হ’ব ডিফ’ল্ট, ব্যতিক্ৰম নহয়।</li><br>
+        <li>পুৰণি ইণ্টাৰনেট আগৰ দৰে কাম কৰিব।</li><br>
+        <li>এতিয়া আপোনাৰ নিজস্ব লিপিত ছাইটসমূহ অভিগম কৰক।</li><br>
+        <li>প্ৰত্যেক নাগৰিকে ডিজিটেল ৰাজহুৱা সুবিধাসমূহ অভিগম কৰিব।</li><br>
+      </ul>
     </div>
-  </section>
+    <div class="image-block">
+      <img src="img3.png" alt="নতুন ইণ্টাৰনেটলৈ সেতু" class="info-image">
+    </div>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h3>OpenSetu</h3>
-        <ul>
-          <li><a href="about.html" class="hover:underline">আমাৰ বিষয়ে</a></li>
-          <li><a href="privacy.html" class="hover:underline">গোপনীয়তা নীতি</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>পৃষ্ঠাৰ লিংক</h3>
-        <ul>
-          <li><a href="FAQ.html" class="hover:underline">FAQ</a></li>
-          <li><a href="documentation.html" class="hover:underline">নথিপত্ৰ</a></li>
-          <li><a href="beta.html" class="hover:underline">Beta Software Alert</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>যোগাযোগ কৰক</h3>
-        <ul>
-          <li><a href="#">ফেচবুক</a></li>
-          <li><a href="#">লিংকডিন</a></li>
-          <li><a href="#">X</a></li>
-        </ul>
-      </div>
+<section class="info-section">
+  <div class="info-wrapper">
+    <div class="text-block">
+      <p>ওপেনসেতু-ত, এতিয়াই আপুনি মুখ্য ৰাজহুৱা সেৱাসমূহ যেনে আধাৰ, DigiLocker, UPI, Health ID, ৰেচন, PM Kisan, নিযুক্তি সেৱা — সকলো প্ৰয়োজনীয় সেৱা অভিগম কৰিব পাৰে।</p>
+      <p>আমি ৰাজহুৱা ইন্ফ্ৰাস্ট্ৰাকচাৰৰে আৰম্ভ কৰিছোঁ, আমি চৰকাৰ, ষ্টাৰ্টআপ আৰু ব্যক্তিগত প্লেটফৰ্মৰ সৈতে কাম কৰিম যাতে পূৰ্ণ ডিজিটেল বিশ্বক ভাৰতৰ আঞ্চলিক ভাষাত অনাৰ ব্যৱস্থা হয়।</p>
     </div>
-    <div class="footer-copy">© ২০২৫ OpenSetu. সকলো অধিকাৰ সংৰক্ষিত।</div>
-  </footer>
+    <div class="image-block">
+      <img src="img4.png" alt="প্ৰস্তুত ছবি" class="info-image">
+    </div>
+  </div>
+</section>
+
+
+
+<section id="how-to-get-started" class="last info-section">
+  <div class="container center-content">
+    <h2 class="section-title">কিদৰে আৰম্ভ কৰিব</h2>
+    <p>এটা সলনি। এটা সম্পূৰ্ণ নতুন ইণ্টাৰনেট।</p>
+
+    <div class="video-wrapper">
+      <video id="get-started-video" src="your-video.mp4" controls></video>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="cta-section">
+  <!-- Gradient trapezium layer -->
+  <div class="cta-gradient-layer"></div>
+
+  <!-- Main content -->
+<div class="cta-inner">
+  <h2>এইটো কেৱল আৰম্ভণি</h2>
+  <div class="cta-grid">
+    <div>
+      <h3>ৰাজহুৱা সুবিধাসমূহ</h3>
+      <p class="cta-desc">আধাৰ, DigiLocker, UPI, Google,
+        <br>X, BTC</p>
+    </div>
+    <div>
+      <h3>ডিজিটেল নাগৰিকত্ব</h3>
+      <p class="cta-desc">আপোনাৰ মাতৃভাষাত ভেৰিফায়েবল ডিজিটেল পৰিচয়।</p>
+    </div>
+    <div>
+      <h3>আঞ্চলিক পৰিচয়</h3>
+      <p class="cta-desc">আপোনাৰ মাতৃভাষাত ড’মেইন নাম আৰু ব্যক্তিগত
+        <br>ই-মেইল ID।</p>
+    </div>
+    <div>
+      <h3>ইয়াৰ ওপৰত নিৰ্মাণ কৰক</h3>
+      <p class="cta-desc">আপোনাৰ নিজস্ব DOH ৰিজলভাৰ বা
+        <br>ভাৰতৰ ইণ্টাৰনেটত সেৱা সৃষ্টি কৰক।</p>
+    </div>
+    <div>
+      <h3>ডিজিটেল স্বদেশী</h3>
+      <p class="cta-desc">ভাৰতৰ বাবে নিৰ্মিত এপছ, প্লেটফৰ্ম আৰু
+        <br>সেৱাসমূহ।</p>
+    </div>
+    <div>
+      <h3>Web3 সংহতি</h3>
+      <p class="cta-desc">.eth আৰু IPFS যেন বিশ্বব্যাপী Web3
+        <br>ইনফ্ৰাস্ট্ৰাকচাৰৰ সৈতে সংহতি কৰক।</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h3>ওপেনসেতু</h3>
+      <ul>
+        <li><a href="about.html" class="hover:underline">আমাৰ বিষয়ে</a></li>
+        <li><a href="privacy.html" class="hover:underline">গোপনীয়তা নীতি</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>পৃষ্ঠাৰ লিংকসমূহ</h3>
+      <ul>
+        <li><a href="domain.html" class="hover:underline">ড’মেইন তালিকা</a></li>
+        <li><a href="documentation.html" class="hover:underline">ডকুমেণ্টেচন</a></li>
+        <li><a href="beta.html" class="hover:underline">বেটা ছফ্টৱেৰ সতর্কতা</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>যোগাযোগ</h3>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">X (Twitter)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 Agaamin. সকলো অধিকাৰ সংৰক্ষিত।</div>
+</footer>
+
+
+  
 
 </body>
+
+<script>
+function scrollToVideo() {
+  const section = document.getElementById('how-to-get-started');
+  section.scrollIntoView({ behavior: 'smooth' });
+
+  const video = document.getElementById('get-started-video');
+  video.play();
+}
+</script>
+
 </html>
